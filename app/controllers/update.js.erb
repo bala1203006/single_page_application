@@ -1,0 +1,5 @@
+<% if @is_saved %>
+	location.href = '<%= root_path %>'
+<% else %>
+	$('#action_on_questions').html("<%=escape_javascript render(:partial => 'edit') %>");
+<% end %>

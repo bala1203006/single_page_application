@@ -1,0 +1,54 @@
+<%= javascript_pack_tag 'common_file' %>
+<div class="container">
+<div class="row" style="padding-top: 5px;">
+  <div class="col-md-10"><h2>Questions</h2></div>
+  <div class="col-md-2"><%= link_to "Add New Question", new_question_path, remote: true, class: 'btn btn-primary' %></div>
+
+</div>
+<div class="row">
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th scope="col">Question</th>
+	      <th scope="col">Role</th>
+	      <th scope="col">Mapping</th>
+	      <th scope="col">Actions</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% @questions.each_with_index do |i_questn, index| %>
+	    <tr>
+	      <td><%= i_questn.body %></td>
+	      <td><%= i_questn.role&.name %></td>
+	      <td><%= i_questn.mapping&.name %></td>
+	      <td>
+			<div class="table_actions">
+				<%= link_to "View", question_path(i_questn), remote: true, class: 'view_link member_link' %>
+				<%= link_to "Edit", edit_question_path(i_questn), remote: true, class: 'edit_link member_link' %>
+				<%= link_to "Delete", question_path(i_questn), remote: true, class: "delete_link member_link", method: :delete %>
+			</div>	      	
+	      </td>
+	    </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+	<% if @questions.blank? %>
+		<p class="no_question">No Questions found</p>
+	<% end %>
+	<div id="action_on_questions">
+
+	</div>
+</div>
+<div class="pagination"><%= will_paginate @posts %></div>
+</div>
+<!-- 
+
+<script type="text/javascript">
+	$(window).bind('beforeunload',function(){
+
+     //save info somewhere
+
+    return 'are you sure you want to leave?';
+
+});
+</script> -->

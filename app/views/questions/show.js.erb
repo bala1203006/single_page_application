@@ -1,0 +1,5 @@
+$('#action_on_questions').html("<%=escape_javascript render(:partial => 'show') %>");
+$('html, body').animate({
+      scrollTop: $("#action_on_questions").offset().top
+  }, 2000);
+
