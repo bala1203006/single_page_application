@@ -24,3 +24,19 @@ p.no_question{
 	width: 30%;
     margin: auto;
 }
+.pagination span.previous_page, .pagination em.current, .pagination a, .pagination a.next_page,span.next_page{
+	margin-left: 0;
+border-top-left-radius: .25rem;
+border-bottom-left-radius: .25rem;
+position: relative;
+display: block;
+padding: .5rem .75rem;
+margin-left: -1px;
+line-height: 1.25;
+color: #007bff;
+background-color: #fff;
+border: 1px solid #dee2e6;
+}
+.pagination em.current{
+  background: #f1e9e9 !important;
+}

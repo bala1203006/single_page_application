@@ -1,12 +1,16 @@
 class QuestionsController < ApplicationController
+
+	#show the actual view of the index page
 	def index
 		@questions = Question.includes(:role, :mapping).order(id: :desc).paginate(page: params[:page], per_page: 10)
 	end
-  
+
+  #render new page for question form
   def new
    	@question = Question.new
   end 
 
+  #create question in the database
   def create
    	@question = Question.new(question_params)
    	@is_saved = @question.save
@@ -17,14 +21,17 @@ class QuestionsController < ApplicationController
    	end	
   end 
 
+  #show particular question from the database
 	def show
 		@question = Question.find_by_id(params[:id])
 	end
 
+  #edit the form with prefilled data
 	def edit
 		@question = Question.find_by_id(params[:id])
 	end
 
+  #update the question object in the database
 	def update
    	@question = Question.find_by_id(params[:id])
    	@is_saved = @question.update(question_params)
@@ -35,6 +42,7 @@ class QuestionsController < ApplicationController
    	end			
 	end
 
+  #destroy the question object from the database
 	def destroy
 		@question = Question.find_by_id(params[:id])		
 		if @question.destroy
