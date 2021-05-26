@@ -2,6 +2,7 @@ These are information about this application
 * ruby - 2.5.1
 * rails - 6.1.3.2
 * database - postgres
+* branch - master
 
 Steps to install application
 * bundle install
