@@ -9,6 +9,7 @@ Steps to install application
 * intially create these 2 databases => hcl_sample_app, hcl_sample_app_test
 * rake db:migrate
 * rake import
+* rake #its for run the test cases
 
 - Here we defined predefined values for roles, mappings, questions in the CSV file, its defined /deb folder, the above comment will create the datas
 
