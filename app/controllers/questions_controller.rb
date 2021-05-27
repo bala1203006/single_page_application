@@ -13,10 +13,10 @@ class QuestionsController < ApplicationController
   #create question in the database
   def create
    	@question = Question.new(question_params)
-   	@is_saved = @question.save
-   	if @is_saved
+   	is_saved = @question.save
+   	if is_saved
    		respond_to do |format|
-   			format.json { redirect_to root_path, notice: 'Questions has been created successfully.' }
+   			format.json { redirect_to root_path, notice: 'Question has been created successfully.' }
    		end	
    	end	
   end 
@@ -34,10 +34,10 @@ class QuestionsController < ApplicationController
   #update the question object in the database
 	def update
    	@question = Question.find_by_id(params[:id])
-   	@is_saved = @question.update(question_params)
-   	if @is_saved
+   	is_saved = @question.update(question_params)
+   	if is_saved
    		respond_to do |format|
-   			format.json { redirect_to root_path, notice: 'Questions has been updated successfully.' }
+   			format.json { redirect_to root_path, notice: 'Question has been updated successfully.' }
    		end	
    	end			
 	end

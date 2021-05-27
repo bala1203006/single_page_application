@@ -34,8 +34,14 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "text/javascript", @response.media_type
   end
 
-
   test "update the question" do
+    @question = questions(:one)
+    post questions_url(@question), xhr: true, params: {"question"=>{"body"=>"asdasd", "role_id"=>"1", "mapping_id"=>"1"}}
+    assert_response :success
+    assert_equal "text/javascript", @response.media_type
+  end
+
+  test "destroy the question" do
   	@question = questions(:one)
   	assert_difference("Question.count", -1) do
       delete question_url(@question)

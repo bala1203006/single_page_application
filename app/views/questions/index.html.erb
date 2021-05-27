@@ -1,10 +1,8 @@
-<%= javascript_pack_tag 'common_file' %>
 <div class="container">
-<div class="row" style="padding-top: 5px;">
-  <div class="col-md-10"><h2>Questions</h2></div>
-  <div class="col-md-2"><%= link_to "Add New Question", new_question_path, remote: true, class: 'btn btn-primary' %></div>
-
-</div>
+	<div class="row p-t-5">
+	  <div class="col-md-10"><h2>Questions</h2></div>
+	  <div class="col-md-2"><%= link_to "Add New Question", new_question_path, remote: true, class: 'btn btn-primary', onclick: "show_loader()" %></div>
+	</div>
 <div class="row">
 	<table class="table table-striped">
 	  <thead>
@@ -23,9 +21,9 @@
 	      <td><%= i_questn.mapping&.name %></td>
 	      <td>
 			<div class="table_actions">
-				<%= link_to "View", question_path(i_questn), remote: true, class: 'view_link member_link' %>
-				<%= link_to "Edit", edit_question_path(i_questn), remote: true, class: 'edit_link member_link' %>
-				<%= link_to "Delete", question_path(i_questn), remote: true, class: "delete_link member_link", method: :delete %>
+				<%= link_to "View", question_path(i_questn), remote: true, class: 'view_link member_link',onclick: "show_loader()" %>
+				<%= link_to "Edit", edit_question_path(i_questn), remote: true, class: 'edit_link member_link',onclick: "show_loader()" %>
+				<%= link_to "Delete", question_path(i_questn), remote: true, class: "delete_link member_link", method: :delete,onclick: "show_loader()" %>
 			</div>	      	
 	      </td>
 	    </tr>

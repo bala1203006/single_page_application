@@ -16,11 +16,23 @@
   </head>
 
   <body>
+    <!-- for loader -->
+    <div id="loading" style="display: none;"></div>
+    <!-- for flash messages -->
     <% flash.each do |type, msg| %>
       <div class="alert alert-info">
         <%= msg %>
       </div>
     <% end %>   
+    <!-- flash messages =end -->
+
     <%= yield %>
+    
   </body>
 </html>
+
+<script type="text/javascript">
+  $(document).on("click",".pagination a",function() {
+    show_loader();
+  });
+</script>

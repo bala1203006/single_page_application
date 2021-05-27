@@ -12,3 +12,13 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+
+//hide loader
+window.hide_loader = function hideLoader() {
+  $('#loading').hide();
+}
+
+//show loader
+window.show_loader = function showLoader() {
+  $('#loading').show();
+}

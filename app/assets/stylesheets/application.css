@@ -19,6 +19,7 @@ div#action_on_questions{
 }
 .err-msg{
 	color: red;
+	font-size: 10px;
 }
 p.no_question{
 	width: 30%;
@@ -26,17 +27,31 @@ p.no_question{
 }
 .pagination span.previous_page, .pagination em.current, .pagination a, .pagination a.next_page,span.next_page{
 	margin-left: 0;
-border-top-left-radius: .25rem;
-border-bottom-left-radius: .25rem;
-position: relative;
-display: block;
-padding: .5rem .75rem;
-margin-left: -1px;
-line-height: 1.25;
-color: #007bff;
-background-color: #fff;
-border: 1px solid #dee2e6;
+	border-top-left-radius: .25rem;
+	border-bottom-left-radius: .25rem;
+	position: relative;
+	display: block;
+	padding: .5rem .75rem;
+	margin-left: -1px;
+	line-height: 1.25;
+	color: #007bff;
+	background-color: #fff;
+	border: 1px solid #dee2e6;
 }
 .pagination em.current{
   background: #f1e9e9 !important;
+}
+
+#loading {
+	width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  position: fixed;
+  z-index: 999999999 !important;
+  background: url(/assets/loader.gif) no-repeat center center rgba(0,0,0,0.25);  
+}
+.p-t-5{
+	padding-top: 5px;
 }
